@@ -1,0 +1,104 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-lg-3 col-sm-6">
+          <div class="card">
+              <div class="content">
+                  <div class="row">
+                      <div class="col-xs-5">
+                          <div class="icon-big icon-warning text-center">
+                              <i class="ti-server"></i>
+                          </div>
+                      </div>
+                      <div class="col-xs-7">
+                          <div class="numbers">
+                              <p>Feedback Score</p>
+                              105
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+          <div class="card">
+              <div class="content">
+                  <div class="row">
+                      <div class="col-xs-5">
+                          <div class="icon-big icon-success text-center">
+                              <i class="ti-wallet"></i>
+                          </div>
+                      </div>
+                      <div class="col-xs-7">
+                          <div class="numbers">
+                              <p>Feedback Recieved</p>
+                              100
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6">
+          <div class="card">
+              <div class="content">
+                  <div class="row">
+                      <div class="col-xs-5">
+                          <div class="icon-big icon-info text-center">
+                              <i class="ti-twitter-alt"></i>
+                          </div>
+                      </div>
+                      <div class="col-xs-7">
+                          <div class="numbers">
+                              <p>Followers</p>
+                              +45
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+
+      <div class="col-md-12">
+          <div class="card">
+              <div class="header">
+                  <h4 class="title">Recent Posts</h4>
+                  <p class="category">Feedback you've given recently</p>
+              </div>
+              
+
+              <div class="content">
+                  <div id="chartHours" class="ct-chart"></div>
+                  <div class="footer">
+                    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.0.js"></script>
+                    <script>
+                    SC.initialize({
+                      client_id: 'YOUR_CLIENT_ID',
+                      redirect_uri: 'http://example.com/callback'
+                    });
+                    
+                    // initiate auth popup
+                    SC.connect().then(function() {
+                        console.log("test");
+                      return SC.get('/me');
+                    }).then(function(me) {
+                      alert('Hello, ' + me.username);
+                    });
+                    </script>
+
+                    <button ng-click="SC.connect()">Connect with soundcloud</button>
+                      <hr>
+                      <div class="stats">
+                          <i class="ti-reload"></i> Updated 3 minutes ago
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  
+
+</div>

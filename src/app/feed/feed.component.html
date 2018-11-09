@@ -1,0 +1,19 @@
+<button mat-button color="accent" class="newPost" [routerLink]="['/new']">New Post</button>
+
+
+
+
+
+<mat-accordion multi=" true" *ngIf="posts.length > 0">
+  <mat-expansion-panel [expanded]="true" *ngFor="let post of posts">
+
+    {{ post.songName }}
+
+    <p>{{ post.genre }}</p>
+    <a href="{{ post.link }}">Song Link:</a>
+
+    <button (click)="onDelete(post._id)" color="warn">DELETE</button>
+
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts added yet!</p>

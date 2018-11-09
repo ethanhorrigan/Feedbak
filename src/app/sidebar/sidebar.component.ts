@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var $:any;
+declare var $: any;
 
 export interface RouteInfo {
     path: string;
@@ -10,17 +10,18 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-  { path: 'dashboard', title: 'Dashboard',  icon: 'ti-panel', class: '' },
-  { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' },
-  { path: 'Discover', title: 'Discover Music',  icon:'ti-view-list-alt', class: '' },
-  { path: 'icons', title: 'Icons',  icon:'ti-pencil-alt2', class: '' },
-  { path: 'notifications', title: 'Notifications',  icon:'ti-bell', class: '' },
+    { path: 'feed', title: 'News Feed', icon: 'ti-rss-alt', class: '' },
+    { path: 'dashboard', title: 'Dashboard', icon: 'ti-panel', class: '' },
+    { path: 'user', title: 'User Profile', icon: 'ti-user', class: '' },
+    { path: 'notifications', title: 'Notifications', icon: 'ti-bell', class: '' },
 ];
+
 
 @Component({
     moduleId: module.id,
     selector: 'sidebar-cmp',
     templateUrl: 'sidebar.component.html',
+    styleUrls: ['./sidebar.component.css']
 })
 
 export class SidebarComponent implements OnInit {
@@ -28,11 +29,11 @@ export class SidebarComponent implements OnInit {
     ngOnInit() {
         this.menuItems = ROUTES.filter(menuItem => menuItem);
     }
-    isNotMobileMenu(){
-      if($(window).width() > 991){
-          return false;
-      }
-      return true;
-  }
+    isNotMobileMenu() {
+        if ($(window).width() > 991) {
+            return false;
+        }
+        return true;
+    }
 
 }

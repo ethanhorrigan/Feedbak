@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FeedComponent } from './feed/feed.component';
 import {
@@ -18,9 +17,12 @@ import {
   MatButtonModule,
   MatIconModule,
   MatToolbarModule,
+  MatProgressSpinnerModule,
   MatExpansionModule
 } from '@angular/material';
 import { NewComponent } from './new/new.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
 
 
 const appRoutes: Routes = [
@@ -33,12 +35,16 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
     path: 'new',
     component: NewComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'user',
+    component: UserComponent
   }
 ];
 
@@ -46,9 +52,10 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
     FeedComponent,
-    NewComponent
+    NewComponent,
+    RegisterComponent,
+    UserComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -64,6 +71,8 @@ const appRoutes: Routes = [
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
+    MatProgressSpinnerModule,
+
     MatExpansionModule,
     MatMenuModule
   ],

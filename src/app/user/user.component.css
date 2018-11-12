@@ -1,0 +1,17 @@
+.container-fluid {
+  margin-top: 50px;
+}
+
+.col-lg-4-col-md-5 {
+  width: 50%;
+
+  margin: 0 auto;
+}
+
+.col-lg-8.col-md-7 {
+  width: 100%;
+}
+
+.btn.btn-light {
+  margin-bottom: 2%;
+}

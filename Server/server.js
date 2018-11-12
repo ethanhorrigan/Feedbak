@@ -8,12 +8,22 @@ var mongoDB = 'mongodb://ethan:ethan123@ds137863.mlab.com:37863/ethandatabase';
 mongoose.connect(mongoDB);
 
 var Schema = mongoose.Schema;
+
 var postSchema = new Schema({
   songName: String,
   genre: String,
   link: String,
 })
+
+var userSchema = new Schema({
+  username: String,
+  email: String,
+  password: String,
+})
+
 var PostModel = mongoose.model('post', postSchema);
+var UserModel = mongoose.model('user', userSchema);
+var crypto = require('crypto');
 
 
 //Here we are configuring express to use body-parser as middle-ware. 
@@ -51,13 +61,31 @@ app.post('/api/posts', function (req, res) {
     genre: req.body.genre,
     link: req.body.link,
   });
-  // res.send('Item added');
+  res.send('Item added');
+})
 
+app.post('/api/users', function (req, res) {
+  console.log("post successful");
+  console.log(req.body.songName);
+  console.log(req.body.genre);
+  console.log(req.body.link);
 
+  UserModel.create({
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password,
+  });
+  res.send('Item added');
 })
 
 app.get('/api/posts', function (req, res) {
   PostModel.find(function (err, data) {
+    res.json(data);
+  });
+})
+
+app.get('/api/users', function (req, res) {
+  UserModel.find(function (err, data) {
     res.json(data);
   });
 })

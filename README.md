@@ -19,3 +19,28 @@ MongoDB: [MongoDB](https://www.mongodb.com/)
 Express: [ExpressJS](https://expressjs.com/)  
 Angular: [Angular](https://angular.io/)  
 Node: [Node](https://nodejs.org/en/)  # Feedbak
+
+Welcome to the Feedbak wiki!
+
+### To-Do
+
+- [ ] Change default to 'Feed' Page
+- [ ] If user is not logged in, Default is Log In page
+- [ ] Remove Register from Sidebar
+- [ ] Add Comment Section
+- [ ] Develop Avatar System using Local Storage
+- [ ] Display Avatar based on User
+- [ ] Add Feedback Score
+- [ ] Display Number of posts User is associated With
+
+### Update Log
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley

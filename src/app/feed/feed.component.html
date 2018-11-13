@@ -1,19 +1,86 @@
-<button mat-button color="accent" class="newPost" [routerLink]="['/new']">New Post</button>
+<button mat-raised-button color="primary" class="newPost" [routerLink]="['/new']">Create Post</button>
+
+<mat-card class="post-card">
+
+  <div class="details-card">
+    <mat-expansion-panel class="post-list" [expanded]="true">
+      <mat-card-header>
+        <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+          <div mat-card-avatar class="avatar-image"></div> Ethan
+          <mat-card-title>Enter Song Name:</mat-card-title>
+          <input type="text" name="songName" ngModel required minlength="3" #songName="ngModel">
+          <!-- <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error> -->
+
+          <mat-card-title>Enter Song Genre:</mat-card-title>
+          <input type="text" name="genre" ngModel required minlength="3" #genre="ngModel">
+          <!-- <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error> -->
+
+
+          <mat-card-title>Enter song link:</mat-card-title>
+          <textarea rows="4" name="link" ngModel required #link="ngModel"></textarea>
+          <!-- <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error> -->
+
+
+          <br>
+          <button mat-raised-button color="accent" type="submit">Save Post</button>
+        </form>
+      </mat-card-header>
+    </mat-expansion-panel>
+  </div>
+
+  <mat-accordion multi=" true" *ngIf="posts.length > 0">
+    <mat-expansion-panel class="post-list" [expanded]="true" *ngFor="let post of posts">
+
+      <div class="details-card">
+        <mat-card-header>
+          <div mat-card-avatar class="avatar-image"></div>
+          <mat-card-title>Track Name: {{ post.songName }}</mat-card-title>
+          <mat-card-subtitle>Genre: {{ post.genre }}</mat-card-subtitle>
+          <mat-card-title><a href="{{ post.link }}">Song Link:</a></mat-card-title>
+        </mat-card-header>
+      </div>
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              View Comments
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+
+          <div ng-app="comments" ng-controller="commentsCtrl">
+            <div class="comment-section-card">
+              <div [class.mat-elevation-z8]="isActive">
+                <mat-card-header>
+                  <div mat-card-avatar class="avatar-image"></div>
+                  <mat-card-title>Ethan Horrigan</mat-card-title>
+                  <mat-card-subtitle>This is my comment</mat-card-subtitle>
+                </mat-card-header>
+              </div>
+              <hr>
+
+              <mat-card-header>
+                <div mat-card-avatar class="avatar-image"></div>
+                <mat-card-title>Justin Bieber</mat-card-title>
+                <mat-card-subtitle>Yummy Burritos</mat-card-subtitle>
+              </mat-card-header>
+            </div>
+
+
+          </div>
+
+        </mat-expansion-panel>
+      </mat-accordion>
 
 
 
+      <a class="delete" mat-stroked-button routerLink="." (click)="onDelete(post._id)">
+        <mat-icon svgIcon="delete-icon"></mat-icon>Delete
+      </a>
+    </mat-expansion-panel>
+  </mat-accordion>
 
+</mat-card>
 
-<mat-accordion multi=" true" *ngIf="posts.length > 0">
-  <mat-expansion-panel [expanded]="true" *ngFor="let post of posts">
-
-    {{ post.songName }}
-
-    <p>{{ post.genre }}</p>
-    <a href="{{ post.link }}">Song Link:</a>
-
-    <button (click)="onDelete(post._id)" color="warn">DELETE</button>
-
-  </mat-expansion-panel>
-</mat-accordion>
 <p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts added yet!</p>

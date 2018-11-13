@@ -1,0 +1,32 @@
+.newPost {
+  position: fixed;
+  display: flex;
+  align-self: flex-end;
+
+}
+
+.avatar-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.delete {
+  float: right;
+}
+
+
+.details-card {
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.post-list {
+  width: 50%;
+  align-items: center;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.comment-card {
+  float: left;
+}

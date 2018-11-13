@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FeedComponent } from './feed/feed.component';
 import {
   MatInputModule,
@@ -18,7 +19,8 @@ import {
   MatIconModule,
   MatToolbarModule,
   MatProgressSpinnerModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatListModule
 } from '@angular/material';
 import { NewComponent } from './new/new.component';
 import { RegisterComponent } from './register/register.component';
@@ -72,7 +74,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
-
+    MatListModule,
     MatExpansionModule,
     MatMenuModule
   ],

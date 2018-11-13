@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Http: HttpClient) { }
+
+  selectedFile: File;
+
+  fileChange(event) {
+    this.selectedFile = <File>event.target.files[0]
+  }
+
+
+  uploadImage() {
+
+  }
 
   ngOnInit() {
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
-import { MatIconRegistry } from '@angular/material';
+import { MatIconRegistry, MatDialogConfig, MatDialog } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgForm } from '@angular/forms';
 
@@ -15,7 +15,7 @@ export class FeedComponent implements OnInit {
 
   posts: any = [];
 
-  constructor(private ps: PostService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private service: PostService) {
+  constructor(private ps: PostService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private service: PostService, private dialog: MatDialog) {
     iconRegistry.addSvgIcon(
       'comment',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/comment.svg'));

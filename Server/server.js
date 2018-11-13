@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://ethan:ethan123@ds137863.mlab.com:37863/ethandatabase';
@@ -21,9 +22,9 @@ var userSchema = new Schema({
   password: String,
 })
 
+
 var PostModel = mongoose.model('post', postSchema);
 var UserModel = mongoose.model('user', userSchema);
-var crypto = require('crypto');
 
 
 //Here we are configuring express to use body-parser as middle-ware. 

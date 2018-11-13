@@ -1,9 +1,24 @@
-.newPost {
-  position: fixed;
-  display: flex;
-  align-self: flex-end;
-
+.feed-content {
+  background-color: red;
 }
+
+.new-post-content {
+  padding: 2%;
+  width: 50%;
+  align-items: center;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.new-post-form {}
+
+form {}
+
+.form-btn {}
+
+.btn-1 {}
+
+button {}
 
 .avatar-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');

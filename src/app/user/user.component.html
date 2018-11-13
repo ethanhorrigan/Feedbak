@@ -5,9 +5,10 @@
 
         <div class="content">
           <div class="author">
-            <img class="avatar border-white" src="assets/img/faces/default.jpg" alt="..." />
+            <img class="avatar border-white" [src]="url" height="200" width="200" alt="..." />
             <div class="text-center">
-              <button type="submit" class="btn btn-light">Update Avatar</button>
+              <input type="file" (change)="fileChange($event)" placeholder="Update Avatar">
+              <button type="file" class="btn btn-light" onclick="uploadImg()">Update Avatar</button>
             </div>
             <h4 class="title">Ethan Horrigan<br />
               <a href="#"><small>@ethanhorro</small></a>

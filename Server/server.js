@@ -2,8 +2,6 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var multer = require('multer');
-
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://ethan:ethan123@ds137863.mlab.com:37863/ethandatabase';
 mongoose.connect(mongoDB);

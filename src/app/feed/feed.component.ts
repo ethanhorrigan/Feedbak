@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
-import { MatIconRegistry, MatDialogConfig, MatDialog } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgForm } from '@angular/forms';
 
@@ -11,11 +11,10 @@ import { NgForm } from '@angular/forms';
 })
 export class FeedComponent implements OnInit {
 
-
-
   posts: any = [];
+  users: any = [];
 
-  constructor(private ps: PostService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private service: PostService, private dialog: MatDialog) {
+  constructor(private ps: PostService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private service: PostService) {
     iconRegistry.addSvgIcon(
       'comment',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/comment.svg'));
@@ -36,6 +35,11 @@ export class FeedComponent implements OnInit {
     this.ps.getPostsData().subscribe(data => {
       this.posts = data;
     });
+
+    this.ps.getUserData().subscribe(data => {
+      this.users = data;
+    });
+
   }
 
   onDelete(id: String) {

@@ -10,6 +10,21 @@
   margin-top: 2%;
 }
 
+.leave-a-comment {
+  width: 100%;
+  background-color: blueviolet;
+}
+
+.comment-area {
+  width: 100%;
+  background-color: aquamarine;
+  float: left;
+}
+
+.cmt-txt-area {
+  width: 100%;
+}
+
 .new-post-form {}
 
 form {}

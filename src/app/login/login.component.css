@@ -1,0 +1,33 @@
+.login-card {
+  width: 800px;
+  height: 800px;
+  border: 2px solid #707070;
+  background-color: #ffffff;
+  text-align: center;
+  margin: auto;
+}
+
+.logo-footer {
+  width: 241px;
+  height: 75px;
+  color: #707070;
+  font-family: "Segoe UI";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 75px;
+  margin: auto;
+}
+
+mat-form-field.mat-form-field {
+  font-family: "Segoe UI";
+  font-size: 16px;
+  width: 608px;
+  height: 76px;
+}
+
+.mat-raised-button {
+  width: 225px;
+  height: 72px;
+  background-color: #EF5950;
+  border-radius: 0 100px 0;
+}

@@ -1,17 +1,14 @@
-<button mat-raised-button (click)="openDialog()">Pick one</button>
-</li>
-<li *ngIf="animal">
-  You chose: <i>{{animal}}</i>
-</li>
-</ol>
-
 <div class="feed-content">
 
   <div class="new-post-content">
     <mat-card class="new-post-card">
       <div class="new-post-form">
         <form (submit)="onAddPost(postForm)" #postForm="ngForm">
-          <div mat-card-avatar class="avatar-image"></div> Ethan
+          <mat-card-header>
+            <div mat-card-avatar class="avatar-image"></div>
+            <mat-card-title>{{ users.username }}</mat-card-title>
+          </mat-card-header>
+
           <mat-card-title>Enter Song Name:</mat-card-title>
           <input type="text" name="songName" ngModel required minlength="3" #songName="ngModel">
           <!-- <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error> -->
@@ -59,20 +56,34 @@
 
             <div ng-app="comments" ng-controller="commentsCtrl">
               <div class="comment-section-card">
-                <div [class.mat-elevation-z8]="isActive">
-                  <mat-card-header>
-                    <div mat-card-avatar class="avatar-image"></div>
-                    <mat-card-title>Ethan Horrigan</mat-card-title>
-                    <mat-card-subtitle>This is my comment</mat-card-subtitle>
-                  </mat-card-header>
-                </div>
-                <hr>
+
+                <mat-card-header>
+                  <div mat-card-avatar class="avatar-image"></div>
+                  <mat-card-title>Ethan Horrigan</mat-card-title>
+                  <mat-card-subtitle>This is my comment</mat-card-subtitle>
+                </mat-card-header>
+
+
 
                 <mat-card-header>
                   <div mat-card-avatar class="avatar-image"></div>
                   <mat-card-title>Justin Bieber</mat-card-title>
                   <mat-card-subtitle>Yummy Burritos</mat-card-subtitle>
                 </mat-card-header>
+
+
+
+                <div class="leave-a-comment">
+                  <mat-card>
+                    <mat-card-header>
+                      <div mat-card-avatar class="avatar-image"></div>
+                      <mat-card-title>Justin Bieber</mat-card-title>
+                      <div class="comment-area">
+                        <textarea class="cmt-txt-area" matInput placeholder="Leave a comment"></textarea>
+                      </div>
+                    </mat-card-header>
+                  </mat-card>
+                </div>
               </div>
 
 

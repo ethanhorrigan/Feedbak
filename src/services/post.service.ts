@@ -2,8 +2,8 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Post } from './post.model';
-import { User } from './user.model';
+import { Post } from '../models/post.model';
+import { User } from '../models/user.model';
 
 
 @Injectable({

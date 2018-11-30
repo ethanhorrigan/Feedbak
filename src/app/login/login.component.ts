@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       for (let i = 0; i < this.users.length; i++) {
         if (form.value.username == this.users[i].username && form.value.password == this.users[i].password) {
           localStorage.setItem("username", this.users[i].username);
-          console.log(this.users[i].username);
+          console.log(this.users[i].username + " logged in.");
 
         }
       }

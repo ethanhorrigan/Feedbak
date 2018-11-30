@@ -12,7 +12,6 @@ export interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: 'feed', title: 'News Feed', icon: 'ti-rss-alt', class: '' },
     { path: 'user', title: 'User Profile', icon: 'ti-user', class: '' },
-    { path: 'register', title: 'Register', icon: 'ti-bell', class: '' },
     { path: 'login', title: 'Login', icon: 'ti-bell', class: '' },
 ];
 

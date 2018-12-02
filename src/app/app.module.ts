@@ -7,9 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { FeedComponent } from './feed/feed.component';
+import { NewComponent } from './new/new.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+
 
 import {
   MatAutocompleteModule,
@@ -49,10 +51,7 @@ import {
   MatTreeModule,
 } from '@angular/material';
 
-
-import { NewComponent } from './new/new.component';
-import { RegisterComponent } from './register/register.component';
-import { UserComponent } from './user/user.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 const appRoutes: Routes = [
@@ -85,11 +84,16 @@ const appRoutes: Routes = [
     FeedComponent,
     NewComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    SidebarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     MatAutocompleteModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserModule,
     MatBadgeModule,
     MatBottomSheetModule,
     MatButtonModule,

@@ -21,8 +21,8 @@ export class PostService {
     return this.http.get("http://localhost:8081/api/users");
   }
 
-  addPost(songName: string, genre: string, link: string): Observable<any> {
-    const post: Post = { songName: songName, genre: genre, link: link };
+  addPost(postedBy: string, songName: string, genre: string, link: string): Observable<any> {
+    const post: Post = { postedBy: postedBy, songName: songName, genre: genre, link: link };
     return this.http.post("http://localhost:8081/api/posts", post);
   }
 

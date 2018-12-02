@@ -6,7 +6,7 @@
         <form (submit)="onAddPost(postForm)" #postForm="ngForm">
           <mat-card-header>
             <div mat-card-avatar class="avatar-image"></div>
-            <mat-card-title>{{ users.username }}</mat-card-title>
+            <mat-card-title>{{ loginUser }}</mat-card-title>
           </mat-card-header>
 
           <mat-card-title>Enter Song Name:</mat-card-title>
@@ -40,8 +40,9 @@
           <mat-card-header>
             <div mat-card-avatar class="avatar-image"></div>
             <mat-card-title>Track Name: {{ post.songName }}</mat-card-title>
-            <mat-card-subtitle>Genre: {{ post.genre }}</mat-card-subtitle>
+            <mat-card-title>Genre: {{ post.genre }}</mat-card-title>
             <mat-card-title><a href="{{ post.link }}">Song Link:</a></mat-card-title>
+            <mat-card-subtitle>Posted By: {{ post.postedBy }}</mat-card-subtitle>
           </mat-card-header>
         </div>
 

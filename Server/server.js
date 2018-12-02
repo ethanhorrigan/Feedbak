@@ -9,6 +9,7 @@ mongoose.connect(mongoDB);
 var Schema = mongoose.Schema;
 
 var postSchema = new Schema({
+  postedBy: String,
   songName: String,
   genre: String,
   link: String,
@@ -51,11 +52,13 @@ app.get('/', function (req, res) {
 
 app.post('/api/posts', function (req, res) {
   console.log("post successful");
+  console.log(req.body.postedBy);
   console.log(req.body.songName);
   console.log(req.body.genre);
   console.log(req.body.link);
 
   PostModel.create({
+    postedBy: req.body.postedBy,
     songName: req.body.songName,
     genre: req.body.genre,
     link: req.body.link,

@@ -3,6 +3,7 @@ import { PostService } from '../../services/post.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgForm } from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-feed',
@@ -14,7 +15,9 @@ export class FeedComponent implements OnInit {
   posts: any = [];
   users: any = [];
 
-  constructor(private ps: PostService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private service: PostService) {
+  user: string;
+
+  constructor(private ps: PostService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private service: PostService, private app: AppComponent) {
     iconRegistry.addSvgIcon(
       'comment',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/comment.svg'));
@@ -23,15 +26,17 @@ export class FeedComponent implements OnInit {
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/delete-icon.svg'));
   }
 
-  onAddPost(form: NgForm) {
-    this.service.addPost(form.value.songName, form.value.genre, form.value.link).subscribe();
+  onAddPost(form: NgForm, user: string) {
+
+    this.user = this.app.getUser();
+    this.service.addPost(this.user, form.value.songName, form.value.genre, form.value.link).subscribe();
+
     console.log(form.value);
     form.resetForm();
     window.location.reload();
   }
 
   ngOnInit() {
-    //this.posts = this.ps.getPosts();
     this.ps.getPostsData().subscribe(data => {
       this.posts = data;
     });
@@ -39,7 +44,6 @@ export class FeedComponent implements OnInit {
     this.ps.getUserData().subscribe(data => {
       this.users = data;
     });
-
   }
 
   onDelete(id: String) {

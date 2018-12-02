@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { FeedComponent } from './feed/feed.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -54,9 +55,14 @@ import {
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { AboutComponent } from './about/about.component';
+import { MypostsComponent } from './myposts/myposts.component';
 
 
 const appRoutes: Routes = [
+  {
+    path: '',
+    component: LoginComponent
+  },
   {
     path: 'feed',
     component: FeedComponent
@@ -88,10 +94,12 @@ const appRoutes: Routes = [
     UserComponent,
     SidebarComponent,
     TopnavComponent,
-    AboutComponent
+    AboutComponent,
+    MypostsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
+    FlexLayoutModule,
     MatAutocompleteModule,
     BrowserAnimationsModule,
     AppRoutingModule,

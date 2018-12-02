@@ -8,7 +8,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FeedComponent } from './feed/feed.component';
-import { NewComponent } from './new/new.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -53,6 +52,8 @@ import {
 } from '@angular/material';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TopnavComponent } from './topnav/topnav.component';
+import { AboutComponent } from './about/about.component';
 
 
 const appRoutes: Routes = [
@@ -65,16 +66,16 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'new',
-    component: NewComponent
-  },
-  {
     path: 'register',
     component: RegisterComponent
   },
   {
     path: 'user',
     component: UserComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
 ];
 
@@ -83,10 +84,11 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     FeedComponent,
-    NewComponent,
     RegisterComponent,
     UserComponent,
-    SidebarComponent
+    SidebarComponent,
+    TopnavComponent,
+    AboutComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

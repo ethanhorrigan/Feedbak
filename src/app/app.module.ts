@@ -11,6 +11,7 @@ import { FeedComponent } from './feed/feed.component';
 import { NewComponent } from './new/new.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import {
@@ -90,6 +91,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     MatAutocompleteModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

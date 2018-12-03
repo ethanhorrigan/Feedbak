@@ -5,22 +5,23 @@
       <div class="new-post-form">
         <form (submit)="onAddPost(postForm)" #postForm="ngForm">
           <mat-card-header>
-            <div mat-card-avatar class="avatar-image"></div>
             <mat-card-title>{{ loginUser }}</mat-card-title>
           </mat-card-header>
 
-          <mat-card-title>Enter Song Name:</mat-card-title>
-          <input type="text" name="songName" ngModel required minlength="3" #songName="ngModel">
-          <!-- <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error> -->
+          <mat-card-title><i class="material-icons">play_arrow</i>Enter Song Name:</mat-card-title>
+          <mat-form-field>
+            <input matInput placeholder="Song Name" ngModel required minlength="3" name="songName" #songName="ngModel">
+          </mat-form-field>
 
-          <mat-card-title>Enter Song Genre:</mat-card-title>
-          <input type="text" name="genre" ngModel required minlength="3" #genre="ngModel">
-          <!-- <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error> -->
+          <mat-card-title><i class="material-icons">note</i>Enter Song Genre:</mat-card-title>
+          <mat-form-field>
+            <input matInput placeholder="Genre" ngModel required minlength="3" name="genre" #genre="ngModel">
+          </mat-form-field>
 
-
-          <mat-card-title>Enter song link:</mat-card-title>
-          <textarea rows="4" name="link" ngModel required #link="ngModel"></textarea>
-          <!-- <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error> -->
+          <mat-card-title><i class="material-icons">play_arrow</i>Enter song link:</mat-card-title>
+          <mat-form-field>
+            <input matInput placeholder="Song Link" ngModel required minlength="3" name="link" #link="ngModel">
+          </mat-form-field>
 
           <div class="form-btn">
             <button mat-raised-button color="accent" type="submit">Save Post</button>
@@ -38,11 +39,13 @@
 
         <div class="details-card">
           <mat-card-header>
-            <div mat-card-avatar class="avatar-image"></div>
             <mat-card-title>Track Name: {{ post.songName }}</mat-card-title>
             <mat-card-title>Genre: {{ post.genre }}</mat-card-title>
             <mat-card-title><a href="{{ post.link }}">Song Link:</a></mat-card-title>
-            <mat-card-subtitle>Posted By: {{ post.postedBy }}</mat-card-subtitle>
+            <br>
+
+            <a mat-fab href="{{ post.link }}"><i class="material-icons">play_arrow</i></a>
+            <mat-card-subtitle class="sub-left">Posted By: {{ post.postedBy }}</mat-card-subtitle>
           </mat-card-header>
         </div>
 
@@ -95,7 +98,7 @@
 
 
 
-        <a class="delete" mat-stroked-button routerLink="." (click)="onDelete(post._id)">
+        <a class="delete" *ngIf="post.postedBy == user" mat-stroked-button routerLink="." (click)="onDelete(post._id)">
           <mat-icon svgIcon="delete-icon"></mat-icon>Delete
         </a>
       </mat-expansion-panel>

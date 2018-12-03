@@ -13,6 +13,12 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
+  private users: User[] = [];
+
+  getUsers() {
+    return [...this.users];
+  }
+
   getPostsData(): Observable<any> {
     return this.http.get("http://localhost:8081/api/posts");
   }
@@ -34,4 +40,14 @@ export class PostService {
   deletePost(id: String): Observable<any> {
     return this.http.delete("http://localhost:8081/api/posts/" + id);
   }
+
+  getPost(id: string): Observable<any> {
+    return this.http.get("http://localhost:8081/api/posts/" + id);
+  }
+  updatePost(id: string, postedBy: string, songName: string, genre: string, link: string): Observable<any> {
+    const post: Post = { postedBy: postedBy, songName: songName, genre: genre, link: link };
+    return this.http.put("http://localhost:8081/api/posts/" + id, post);
+  }
+
+
 }

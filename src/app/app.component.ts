@@ -12,7 +12,7 @@ declare var $: any;
 export class AppComponent {
 
   users: any = [];
-  loginUser: string = "Guest";
+  loginUser: string = localStorage.getItem("username");
   password: String;
   loggedIn: string;
 

@@ -1,17 +1,23 @@
-.container-fluid {
-  margin-top: 50px;
-}
-
-.col-lg-4-col-md-5 {
+.mat-card {
   width: 50%;
-
+  text-align: center;
+  padding: 2%;
   margin: 0 auto;
 }
 
-.col-lg-8.col-md-7 {
-  width: 100%;
+.details-card {
+  margin-top: 5%;
+  padding: 5%;
 }
 
-.btn.btn-light {
-  margin-bottom: 2%;
+.post-list {
+  width: 50%;
+  align-items: center;
+  margin: auto;
+  margin-top: 2%;
+}
+
+
+.sub-left {
+  padding-top: 15px;
 }

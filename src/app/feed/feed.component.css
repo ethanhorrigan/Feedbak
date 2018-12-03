@@ -8,7 +8,6 @@
 
 .leave-a-comment {
   width: 100%;
-  background-color: blueviolet;
 }
 
 .comment-area {
@@ -45,4 +44,8 @@
 
 .comment-card {
   float: left;
+}
+
+.sub-left {
+  padding-top: 15px;
 }

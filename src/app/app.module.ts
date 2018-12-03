@@ -54,8 +54,9 @@ import {
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopnavComponent } from './topnav/topnav.component';
-import { AboutComponent } from './about/about.component';
 import { MypostsComponent } from './myposts/myposts.component';
+import { StatComponent } from './user/stat/stat.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 
 const appRoutes: Routes = [
@@ -80,8 +81,8 @@ const appRoutes: Routes = [
     component: UserComponent
   },
   {
-    path: 'about',
-    component: AboutComponent
+    path: 'edit-post/:_id',
+    component: EditPostComponent
   }
 ];
 
@@ -94,8 +95,9 @@ const appRoutes: Routes = [
     UserComponent,
     SidebarComponent,
     TopnavComponent,
-    AboutComponent,
-    MypostsComponent
+    MypostsComponent,
+    StatComponent,
+    EditPostComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

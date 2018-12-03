@@ -1,23 +1,27 @@
 <mat-card>
   <form (submit)="onAddUser(userForm)" #userForm="ngForm">
 
-    Email:
+    <h2>Email:</h2>
+    <br>
     <input type="text" name="email" ngModel required minlength="3" #email="ngModel">
     <!-- <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error> -->
 
-    Username:
+    <br>
+    <h2>Username:</h2>
+    <br>
     <input type="text" name="username" ngModel required minlength="3" #username="ngModel">
     <!-- <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error> -->
 
 
     <br>
-
-    Password:
+    <h2>Password:</h2>
+    <br>
     <textarea rows="4" name="password" ngModel required #password="ngModel"></textarea>
     <!-- <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error> -->
 
 
     <br>
     <button mat-raised-button color="accent" type="submit">Register</button>
+
   </form>
 </mat-card>

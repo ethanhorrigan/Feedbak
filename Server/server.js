@@ -80,6 +80,7 @@ app.post('/api/users', function (req, res) {
   res.send('Item added');
 })
 
+
 app.get('/api/posts', function (req, res) {
   PostModel.find(function (err, data) {
     res.json(data);
@@ -103,6 +104,23 @@ app.delete('/api/posts/:id', function (req, res) {
         res.send(err);
       res.send(data);
     })
+})
+
+//GET POST VIA ID
+app.get('/api/posts/:id', function (req, res) {
+  PostModel.find({
+      _id: req.params.id
+    },
+    function (err, data) {
+      res.json(data);
+    });
+});
+
+//UPDATE POST
+app.put('/api/posts/:id', function (req, res) {
+  PostModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+    res.json(post);
+  });
 })
 
 

@@ -4,7 +4,6 @@ Feedbak is a website where Music Producers can exchange feedback on there music.
 
 ## Terminal Commands
 
-1. Install NodeJs from [NodeJs Official Page](https://nodejs.org/en).
 2. Open Terminal
 3. Go to your file project
 4. Run in terminal: ```npm install -g @angular/cli```
@@ -20,9 +19,11 @@ Express: [ExpressJS](https://expressjs.com/)
 Angular: [Angular](https://angular.io/)  
 Node: [Node](https://nodejs.org/en/)  
 
-##
+## Installs if Needed.
 
 ```npm i @angular/flex-layout```
+```npm i mongoose```
+```npm i @angular/material```
 
 ### Brief
 

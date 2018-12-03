@@ -20,6 +20,9 @@ Express: [ExpressJS](https://expressjs.com/)
 Angular: [Angular](https://angular.io/)  
 Node: [Node](https://nodejs.org/en/)  
 
+##
+
+```npm i @angular/flex-layout```
 
 ### Brief
 
